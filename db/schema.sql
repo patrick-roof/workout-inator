@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS training_db;
+CREATE DATABASE training_db;
