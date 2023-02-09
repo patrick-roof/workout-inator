@@ -50,9 +50,9 @@ User.init(
     },
     gender: {
       type: DataType.STRING,
-      
-
-    }
+      choice: ['Male', 'Female'],
+      allowNull: false,
+    },
   },
   {
     hooks: {
