@@ -16,8 +16,12 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    firstName: {
       type: DataTypes.STRING,
+      allowNull: false,
+    },
+    secondName: {
+      type: DataType.STRING,
       allowNull: false,
     },
     email: {
@@ -36,6 +40,27 @@ User.init(
       },
     },
     //add calorie info here *maybe weight info
+    goal: {
+      type: DataType.STRING,
+      allowNull: false,
+    },
+    age: {
+      type: DataType.INTEGER,
+      allowNull: false,
+    },
+    gender: {
+      type: DataType.STRING,
+      choice: ['Male', 'Female'],
+      allowNull: false,
+    },
+    weight: {
+      type: DataType.INTEGER,
+      allowNull: false,
+    },
+    height: {
+      type: DataType.INTEGER,
+      allowNull: false
+    }
   },
   {
     hooks: {
