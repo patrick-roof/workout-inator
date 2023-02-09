@@ -53,6 +53,14 @@ User.init(
       choice: ['Male', 'Female'],
       allowNull: false,
     },
+    weight: {
+      type: DataType.INTEGER,
+      allowNull: false,
+    },
+    height: {
+      type: DataType.INTEGER,
+      allowNull: false
+    }
   },
   {
     hooks: {
