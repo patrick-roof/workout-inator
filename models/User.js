@@ -21,7 +21,7 @@ User.init(
       allowNull: false,
     },
     secondName: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     email: {
@@ -41,24 +41,24 @@ User.init(
     },
     //add calorie info here *maybe weight info
     goal: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     age: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     gender: {
-      type: DataType.STRING,
+      type: DataTypes.STRING,
       choice: ['Male', 'Female'],
       allowNull: false,
     },
     weight: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     height: {
-      type: DataType.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false
     }
   },

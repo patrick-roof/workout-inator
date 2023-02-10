@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Macro Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+  </head>
+  <style>
+    body {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      padding-top: 10%;
+    }
+  </style>
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">First</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  id="firstName"
+                  class="input"
+                  type="text"
+                  placeholder="Name"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">Last</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  id="lastName"
+                  class="input"
+                  type="text"
+                  placeholder="Last"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">What's your goal?</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-narrow">
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select>
+                    <option>Lose 2 pounds a week</option>
+                    <option>Lose 1 pounds a week</option>
+                    <option>Maintain weight</option>
+                    <option>Gain 1 pounds a week</option>
+                    <option>Gain 2 pounds a week</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Gender</label>
+          </div>
+          <div class="field-body">
+            <div class="field is-narrow">
+              <div class="control">
+                <label class="radio">
+                  <input class="gender" type="radio" name="member" />
+                  Male
+                </label>
+                <label class="radio">
+                  <input class="gender" type="radio" name="member" />
+                  Female
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">Age</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  id="age"
+                  class="input"
+                  type="text"
+                  placeholder="18 - 80"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">Weight</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  id="weight"
+                  class="input"
+                  type="text"
+                  placeholder="Weight in lbs"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label is-normal">
+            <label class="label">Height</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  id="height"
+                  class="input"
+                  type="text"
+                  placeholder="Height in cm"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <!-- Left empty for spacing -->
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <button class="button is-primary">See your results</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function macrosCalculator() {
+      var goal = document.querySelector("select").value;
+      var gender = document.getElementsByClassName("gender").value;
+      var age = document.getElementById("age").value;
+      var weight = document.getElementById("weight").value;
+      var height = document.getElementById("height").value;
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+
+      var BMR;
+      if (gender === "Male") {
+        BMR = 88.36 + 13.4 * weight + 4.8 * height - 5.7 * age;
+      } else {
+        BMR = 447.6 + 9.25 * weight + 3.1 * height - 4.33 * age;
+      }
+
+      var yourGoal;
+      switch (goal) {
+        case "Lose 2 pounds a week":
+          yourGoal = BMR * 1.2 - 1000;
+          break;
+        case "Lose 1 pounds a week":
+          yourGoal = BMR * 1.2 - 500;
+          break;
+        case "Maintain weight":
+          yourGoal = BMR * 1.2;
+          break;
+        case "Gain 1 pounds a week":
+          yourGoal = BMR * 1.2 + 500;
+          break;
+        case "Gain 2 pounds a week":
+          yourGoal = BMR * 1.2 + 1000;
+          break;
+      }
+
+      alert(
+        firstName +
+          lastName +
+          " your daily calorie goal is: " +
+          yourGoal +
+          " calories."
+      );
+    }
+
+    document
+      .querySelector("button")
+      .addEventListener("click", macrosCalculator);
+  </script>
+</html>

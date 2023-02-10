@@ -26,9 +26,9 @@
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a>profile</a> |
-        <button>logout</button>
+        <button id="logout">logout</button>
         {{else}}
-        <a>login</a>
+        <a href="/login">login</a>
         {{/if}}
       </nav>
     </header>
@@ -44,6 +44,7 @@
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+  <script src="/js/profile.js"></script>
   {{/if}}
 </body>
 
