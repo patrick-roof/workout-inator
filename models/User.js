@@ -20,7 +20,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    secondName: {
+    lastName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -43,6 +43,9 @@ User.init(
     goal: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    daily_calories: {
+      type: DataTypes.INTEGER,
     },
     age: {
       type: DataTypes.INTEGER,
