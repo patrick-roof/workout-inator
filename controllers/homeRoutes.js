@@ -33,7 +33,7 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/survey', (req, res) => {
-    
+    res.render('survey')
 })
 
 module.exports = router
