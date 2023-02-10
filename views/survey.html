@@ -68,9 +68,9 @@
                 <div class="select is-fullwidth">
                   <select>
                     <option>Lose 2 pounds a week</option>
-                    <option>Lose 1 pounds a week</option>
+                    <option>Lose 1 pound a week</option>
                     <option>Maintain weight</option>
-                    <option>Gain 1 pounds a week</option>
+                    <option>Gain 1 pound a week</option>
                     <option>Gain 2 pounds a week</option>
                   </select>
                 </div>
@@ -190,13 +190,13 @@
         case "Lose 2 pounds a week":
           yourGoal = BMR * 1.2 - 1000;
           break;
-        case "Lose 1 pounds a week":
+        case "Lose 1 pound a week":
           yourGoal = BMR * 1.2 - 500;
           break;
         case "Maintain weight":
           yourGoal = BMR * 1.2;
           break;
-        case "Gain 1 pounds a week":
+        case "Gain 1 pound a week":
           yourGoal = BMR * 1.2 + 500;
           break;
         case "Gain 2 pounds a week":
@@ -205,7 +205,7 @@
       }
 
       alert(
-        firstName +
+        firstName + " " +
           lastName +
           " your daily calorie goal is: " +
           yourGoal +
