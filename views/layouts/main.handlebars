@@ -9,35 +9,36 @@
   <title>Fund My Project!</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  {{!-- bulma --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
 </head>
 
-<body>
+<body class="container is-fluid">
   <div>
-    <header>
+    <header class="container is-fluid navbar level has-background-warning" role="navigation">
       <h1>
-        <span></span>
-        <a href="/">Home</a>
+        <a class="title is-1 navbar-item level-item has-text-centered has-text-info-light" href="/homepage">Home</a>
       </h1>
        <h1>
-        <span></span>
-        <a href="/">Dashboard</a>
+        <a class="title is-1 navbar-item level-item has-text-centered has-text-info-light" href="/profile">Profile</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a>profile</a> |
-        <button id="logout">logout</button>
+        <button class="button is-danger title is-3 navbar-item has-text-info-light" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a class="button is-danger title is-3 navebar-item has-text-info-light" href="/login">Get Started</a>
         {{/if}}
       </nav>
     </header>
-    <main >
+    <main class="container is-fluid has-background-info-light">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
-      
+    <footer class="subtitle is-6 has-text-centered has-text-dark is-hidden-desktop">
+      This website is brought to you by TRENBOLONE!
     </footer>
   </div>
 
