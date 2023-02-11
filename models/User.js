@@ -44,6 +44,9 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    daily_calories: {
+      type: DataTypes.INTEGER,
+    },
     age: {
       type: DataTypes.INTEGER,
       allowNull: false,

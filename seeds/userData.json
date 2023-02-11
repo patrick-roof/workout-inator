@@ -1,0 +1,38 @@
+[
+    {
+        "firstName": "Patrick",
+        "lastName": "Ruf",
+        "email": "roosterruf@gmail.com",
+        "password": "password",
+        "goal": "Gain 1 pound a week",
+        "daily_calories": 3166,
+        "age": 23,
+        "gender": "Male",
+        "weight": 145,
+        "height": 172
+    },
+    {
+        "name": "Arthur",
+        "lastName": "Morgan",
+        "email": "arthur@gmail.com",
+        "password": "password",
+        "goal": "Lose 1 pound a week",
+        "daily_calories": 2525,
+        "age": 36,
+        "gender": "Male",
+        "weight": 180,
+        "height": 182
+    },
+    {
+        "name": "Sadie",
+        "lastName": "Adler",
+        "email": "sadie@gmail.com",
+        "password": "password",
+        "goal": "Maintain weight",
+        "daily_calories": 2500,
+        "age": 30,
+        "gender": "Female",
+        "weight": 135,
+        "height": 167
+    }
+]
