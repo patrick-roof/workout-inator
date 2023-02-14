@@ -16,7 +16,7 @@ Workout.init(
             allowNull: false,
         },
         muscle_group_focus: {
-
+            type: DataTypes.STRING,
         },
         exercise_1: {
             type: DataTypes.STRING,

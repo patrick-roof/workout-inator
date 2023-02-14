@@ -12,7 +12,7 @@
         "height": 172
     },
     {
-        "name": "Arthur",
+        "firstName": "Arthur",
         "lastName": "Morgan",
         "email": "arthur@gmail.com",
         "password": "password",
@@ -24,7 +24,7 @@
         "height": 182
     },
     {
-        "name": "Sadie",
+        "firstName": "Sadie",
         "lastName": "Adler",
         "email": "sadie@gmail.com",
         "password": "password",
