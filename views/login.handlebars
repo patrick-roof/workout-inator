@@ -1,7 +1,7 @@
 {{!-- THIS NEEDS TO BE CHANGED! matt webb feb 8 2023 --}}
 
 {{!-- lOGIN --}}
-<div class="modal" id="form-modal">
+<div class="modalLogin" id="form-modalLogin">
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="section modal-wrap">
@@ -21,7 +21,7 @@
       </div>
 
       <div class="control">
-        <button class="button is-primary" action="ticket.html" id="submit">Submit</button>
+        <button class="button is-primary" action="" id="submitLogin">Login In</button> <!--created a new id-->
       </div>
 
     </div>
@@ -30,13 +30,13 @@
 </div>
 
 {{!--SIGNUP--}}
-<div class="modal" id="form-modal">
+<div class="modalSignup" id="form-modalSignup">
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="section modal-wrap">
 
       <div class="field">
-        <label clas="lable is-large">First Name</label>
+        <label class="lable is-large">First Name</label>
         <div class="control">
           <input class="input is rounded is-large" type="text" placeholder="e.g Jake" id="firstName">
         </div>
@@ -64,35 +64,58 @@
       </div>
 
       <div class="field">
-        <label clas="lable is-large">Goal:</label>
+        <label class="lable is-large">Goal:</label>
         <div class="control">
+          <!--I need to change this into a choice option
+              Lose 2 pounds a week
+              Lose 1 pound a week.
+              Maintain weight.
+              Gain 1 pound a week.
+              Gain 2 pounds a week.
+          -->
+
           <input class="input is rounded is-large" type="text" placeholder="Write down your goal" id="goal">
         </div>
       </div>      
 
       <div class="field">
-        <label clas="lable is-large">Age:</label>
+        <label class="lable is-large">Age:</label>
         <div class="control">
           <input class="input is rounded is-large" type="integer" placeholder="42" id="age">
         </div>
       </div>
 
       <div class="field">
-        <label clas="lable is-large">Weight</label>
+        <label class="lable is-large">Gender:</label>
+        <div class="control">
+          <label class="radio">
+            <input class="gender" type="radio" name="member">
+            Male
+          </label>
+          <label class="radio">
+            <input class="gender" type="radio" name="member">
+            Famale
+          </label>
+          <input class="gender input is rounded is-large" type="radio" name="member"
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="lable is-large">Weight</label>
         <div class="control">
           <input class="input is rounded is-large" type="integer" placeholder="Enter your weight in lbs." id="firstName">
         </div>
       </div>
 
       <div class="field">
-        <label clas="lable is-large">Height</label>
+        <label class="lable is-large">Height</label>
         <div class="control">
           <input class="input is rounded is-large" type="integer" placeholder="Enter your height in cm." id="height">
         </div>
       </div>
 
       <div class="control">
-        <button class="button is-primary" action="--" id="submit">Submit</button>
+        <button class="button is-primary" action="##" id="submitSignup">Sign Up</button> <!--created a new id-->
       </div>
 
     </div>
@@ -100,6 +123,56 @@
   </div>
 </div>
 
+  <script>
+    function macrosCalculator() {
+      var goal = document.querySelector("select").value;
+      var gender = document.getElementsByClassName("gender").value;
+      var age = document.getElementById("age").value;
+      var weight = document.getElementById("weight").value;
+      var height = document.getElementById("height").value;
+      var firstName = document.getElementById("firstName").value;
+      var lastName = document.getElementById("lastName").value;
+
+      var BMR;
+      if (gender === "Male") {
+        BMR = 88.36 + 13.4 * weight + 4.8 * height - 5.7 * age;
+      } else {
+        BMR = 447.6 + 9.25 * weight + 3.1 * height - 4.33 * age;
+      }
+
+      var yourGoal;
+      switch (goal) {
+        case "Lose 2 pounds a week":
+          yourGoal = BMR * 1.2 - 1000;
+          break;
+        case "Lose 1 pound a week":
+          yourGoal = BMR * 1.2 - 500;
+          break;
+        case "Maintain weight":
+          yourGoal = BMR * 1.2;
+          break;
+        case "Gain 1 pound a week":
+          yourGoal = BMR * 1.2 + 500;
+          break;
+        case "Gain 2 pounds a week":
+          yourGoal = BMR * 1.2 + 1000;
+          break;
+      }
+
+      alert(
+        firstName + " " +
+          lastName +
+          " your daily calorie goal is: " +
+          yourGoal +
+          " calories."
+      );
+    }
+
+    document
+      .querySelector("button")
+      .addEventListener("click", macrosCalculator);
+  </script>
+  
 <script src="./js/login.js"></script>
 
 
