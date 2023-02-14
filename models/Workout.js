@@ -11,14 +11,26 @@ Workout.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        muscle_group: {
+        title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        item_1: {
+        muscle_group_focus: {
             type: DataTypes.STRING,
         },
-        item_2: {
+        exercise_1: {
+            type: DataTypes.STRING,
+        },
+        exercise_2: {
+            type: DataTypes.STRING,
+        },
+        exercise_3: {
+            type: DataTypes.STRING,
+        },
+        exercise_4: {
+            type: DataTypes.STRING,
+        },
+        exercise_5: {
             type: DataTypes.STRING,
         },
         description: {
