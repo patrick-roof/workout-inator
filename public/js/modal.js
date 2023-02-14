@@ -1,5 +1,6 @@
 var button = document.getElementById('button');
-var modal = document.getElementById('form-modal');
+var modalLogin = document.getElementById('form-modalLogin');
+const modalSignup = document.getElementById('form-modalSignup');
 var close = document.getElementsByClassName('modal-close') [0];
 
 button.onclick = function() {

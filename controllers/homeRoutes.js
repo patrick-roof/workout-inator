@@ -1,8 +1,32 @@
 const router = require('express').Router();
+const { Workout, User } = require('../models')
 const withAuth = require('../utils/auth')
 
-router.get('/', (req, res) => {
-    res.render('homepage')
+router.get('/', async (req, res) => {
+  //added login requirements to the homepage.
+  //the workouts will be locked from view until logged in.
+  //TEST//
+  //un-comment lines 10-28 to test
+  try {
+    const workoutData = await Workout.FindAll({
+      include: [
+        {
+          model: User,
+          attributes: ['firstName', 'lastName'], // will this be okay? or; 
+        },                                       // do we want to update the attribute to;
+      ],                                         // 'name' or;
+    });                                          // leave it as 'firstName' and 'lastName'?
+
+    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+
+    res.render('homepage', {
+      workouts,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+    // res.render('homepage')
 })
 
 router.get('/profile', withAuth, async (req, res) => {
