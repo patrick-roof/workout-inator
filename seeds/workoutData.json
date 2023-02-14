@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Push",
+        "muscle-group-focus": "Triceps, Shoulders and Chest",
+        "exercise_1": "Tricep Extension",
+        "exercise_2": "Shoulder Press",
+        "exercise_3": "Lateral Raises",
+        "exercise_4": "Flat Bench Press",
+        "exercise_5": "Incline Bench Press",
+        "description": "The fitness gram pacer test is a multi-arobic stage test that"
+    },
+    {
+        "title": "Pull",
+        "muscle_group_focus": "Biceps, Back, Abs",
+        "exercise_1": "Bicep Curls",
+        "exercise_2": "Chest supported row machine ",
+        "exercise_3": "Lat Pulldown",
+        "exercise_4": "Situps",
+        "exercise_5": "Crunches",
+        "description": "The fitness gram pacer test is a multi-arobic stage test that"
+    },
+    {
+        "title": "Legs",
+        "muscle-group-focus": "Quads, Hamstrings, Glutes, Calves",
+        "exercise_1": "Leg Extensions",
+        "exercise_2": "Hamstring Curls",
+        "exercise_3": "Squats",
+        "exercise_4": "Glute Bridge",
+        "exercise_5": "Calf raises",
+        "description": "The fitness gram pacer test is a multi-arobic stage test that"
+    }
+]
