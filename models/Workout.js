@@ -29,6 +29,13 @@ Workout.init(
         description: {
             type: DataTypes.TEXT,
             allowNull: true
+        },
+        gallery_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'gallery',
+              key: 'id',
+            }
         }
     },
     {
