@@ -1,11 +1,9 @@
-<section class="container">
-  <h3></h3>
-  <section class="workout">
-    <img src="/images/{{workout.filename}}" alt="{{workout.description}}">
-    <div class="workout-details">
-      <h3>{{workout.muscle_group_focus}}</h3>
-      <p>{{workout.exercise}}</p>
-      <p>🦾🏋️‍♀️🥇🏆: {{workout.description}}</p>
-    </div>
+<section class="container"> <!--add bulma or add CSS-->
+  <h3 class="workout-name">{{workout.title}}</h3> <!--add bulma or add CSS-->
+  <h3>{{workout.muscle_group_focus}}</h3>
+  <section class="flex-row justify-center"> <!--add bulma or add CSS-->
+    {{#each gallery.workout as |workout|}}
+    {{> workout-details}}
+    {{/each}}
   </section>
 </section>
