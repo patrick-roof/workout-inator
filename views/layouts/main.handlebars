@@ -6,34 +6,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
+  <title>Workout-inator 3 Billion</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <div>
-    <header>
-      <h1>
-        <span></span>
-        <a href="/">Home</a>
-      </h1>
-       <h1>
-        <span></span>
-        <a href="/">Dashboard</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a>profile</a> |
-        <button id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-        
-        {{macrosCalculator}}
-      </nav>
-    </header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a href='/'class="navbar-item"> Home </a>
+          {{#if logged_in}}
+          <a href='/survey'class="navbar-item"> Macros Calculator </a>
+          <button class="navbar-item" id="logout">logout</button>
+          {{else}}
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href='/login'class="button is-primary">
+                <strong>Login</strong>
+              </a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <main >
       <!-- Render the sub layout -->
       {{{ body }}}

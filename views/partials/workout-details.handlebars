@@ -1,0 +1,22 @@
+<!--created a blank images folder to house all our images for each workout.-->
+<!-- TO DO 
+      have a saved image/gif for each of the exercises.
+      each image/gif must be named the exact same to make it easy to link
+-->
+<section class="card">
+    <a href="/workout/{{id}}">
+      <header>{{title}}</header>
+      
+      <div class="card-body">
+      <img src="/public/images/{{title}}" alt="{{description}}">
+      <h3>Muscle Group:{{muscle_group_focus}}</h3>
+        <ul>
+            <li>The first exercise is: {{exercise_1}}.</li> 
+            <li>The second exercise is: {{exercise_2}}.</li>
+            <li>The third exercise is: {{exercise_3}}.</li>
+            <li>The forth exercise is: {{exercise_4}}.</li>
+            <li>The fifth exercise is: {{exercise_5}}.</li>
+        </ul>
+      </div>
+    </a>
+</section>

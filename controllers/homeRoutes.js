@@ -7,26 +7,48 @@ router.get('/', async (req, res) => {
   //the workouts will be locked from view until logged in.
   //TEST//
   //un-comment lines 10-28 to test
-  try {
-    const workoutData = await Workout.FindAll({
-      include: [
-        {
-          model: User,
-          attributes: ['firstName', 'lastName'], // will this be okay? or; 
-        },                                       // do we want to update the attribute to;
-      ],                                         // 'name' or;
-    });                                          // leave it as 'firstName' and 'lastName'?
+  // try {
+  //   const workoutData = await Workout.FindAll({
+  //     include: [
+  //       {
+  //         model: User,
+  //         attributes: ['firstName', 'lastName'], // will this be okay? or; 
+  //       },                                       // do we want to update the attribute to;
+  //     ],                                         // 'name' or;
+  //   });                                          // leave it as 'firstName' and 'lastName'?
 
-    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+  //   const workouts = workoutData.map((workout) => workout.get({ plain: true }));
 
-    res.render('homepage', {
-      workouts,
+  //   res.render('homepage', {
+  //     workouts,
+  //     logged_in: req.session.logged_in
+  //   });
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
+    res.render('homepage')
+})
+
+router.get('/workoutpage', async (req, res) => {
+  // try {
+  //   const workoutData = await Workout.FindAll({
+  //     include: [
+  //       {
+  //         model: User,
+  //         attributes: ['firstName', 'lastName'], 
+  //       },                                       
+  //     ],                                        
+  //   });                                         
+
+    // const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+
+    res.render('workoutpage', {
+      // workouts,
       logged_in: req.session.logged_in
     });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-    // res.render('homepage')
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 })
 
 router.get('/profile', withAuth, async (req, res) => {
@@ -49,11 +71,20 @@ router.get('/profile', withAuth, async (req, res) => {
   
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
-      res.redirect('/profile');
+      res.redirect('/workoutpage');
       return;
     }
   
     res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/workoutpage');
+    return;
+  }
+
+  res.render('signup');
 });
 
 router.get('/survey', (req, res) => {
