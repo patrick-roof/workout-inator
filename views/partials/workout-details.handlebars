@@ -1,16 +1,11 @@
-<!--created a blank images folder to house all our images for each workout.-->
-<!-- TO DO 
-      have a saved image/gif for each of the exercises.
-      each image/gif must be named the exact same to make it easy to link
--->
-<section class="card">
+<section class="card"> <!--add bulma or add CSS-->
     <a href="/workout/{{id}}">
       <header>{{exercise}}</header>
-      
-      <div class="card-body">
+      <h2>{{title}}</h2>
+      <div class="card-body"> <!--add bulma or add CSS-->
       <img src="/images/{{filename}}" alt="{{description}}">
       <h3>Muscle Group:{{muscle_group_focus}}</h3>
-      <p>{{description}}</p>
+      <p>🦾🏋️‍♀️🥇🏆:{{description}}</p>
       </div>
     </a>
 </section>
