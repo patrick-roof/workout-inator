@@ -48,6 +48,10 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.post('/signup', async (req, res) => {
+  //something may need to go here for the signup to work
+})
+
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

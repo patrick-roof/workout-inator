@@ -13,7 +13,29 @@
 
 <body>
   <div>
-    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a href='/'class="navbar-item"> Home </a>
+          {{#if logged_in}}
+          <a href='/survey'class="navbar-item"> Macros Calculator </a>
+          <button class="navbar-item" id="logout">logout</button>
+          {{else}}
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href='/login'class="button is-primary">
+                <strong>Login</strong>
+              </a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <main >
       <!-- Render the sub layout -->
       {{{ body }}}

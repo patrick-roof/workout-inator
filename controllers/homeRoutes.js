@@ -30,25 +30,25 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/workoutpage', async (req, res) => {
-  try {
-    const workoutData = await Workout.FindAll({
-      include: [
-        {
-          model: User,
-          attributes: ['firstName', 'lastName'], // will this be okay? or; 
-        },                                       // do we want to update the attribute to;
-      ],                                         // 'name' or;
-    });                                          // leave it as 'firstName' and 'lastName'?
+  // try {
+  //   const workoutData = await Workout.FindAll({
+  //     include: [
+  //       {
+  //         model: User,
+  //         attributes: ['firstName', 'lastName'], 
+  //       },                                       
+  //     ],                                        
+  //   });                                         
 
-    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
+    // const workouts = workoutData.map((workout) => workout.get({ plain: true }));
 
     res.render('workoutpage', {
-      workouts,
+      // workouts,
       logged_in: req.session.logged_in
     });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 })
 
 router.get('/profile', withAuth, async (req, res) => {
