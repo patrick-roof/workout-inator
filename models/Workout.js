@@ -17,20 +17,13 @@ Workout.init(
         },
         muscle_group_focus: {
             type: DataTypes.STRING,
+            allowNull: false,
         },
-        exercise_1: {
+        exercise: {
             type: DataTypes.STRING,
+            allowNull: false,
         },
-        exercise_2: {
-            type: DataTypes.STRING,
-        },
-        exercise_3: {
-            type: DataTypes.STRING,
-        },
-        exercise_4: {
-            type: DataTypes.STRING,
-        },
-        exercise_5: {
+        filename: {
             type: DataTypes.STRING,
         },
         description: {
