@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Push",
+        "filename": "01-<<<add file name>>>.jpg",
+        "description": "🦾 Upper Body Workouts"
+    },
+    {
+        "title": "Pull",
+        "filename": "02-<<<add file name>>>.jpg",
+        "description": "Core Body Workouts"
+    },
+    {
+        "title": "Legs",
+        "filename": "03-<<<add file name>>>.jpg",
+        "description": "🦵 Leg Day Workouts"
+    }
+]
