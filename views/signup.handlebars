@@ -1,8 +1,8 @@
 {{!--SIGNUP--}}
-<div class="" id="">
-  <div class=""></div>
-  <div class="">
-    <form class="form section signup-form" id='signup-form'>
+<div class="modalSignup" id="form-modalSignup">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <form class="form section signup-form" id="signup-form">
     <h2>Signup</h2>
       <div class="field">
         <label for='email-signup'class="lable is-large">email:</label>
@@ -11,62 +11,10 @@
         </div>
       </div>
       
-  
-      @keyframes gradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-    </style>
-    <div class="card">
-      <div class="modalSignup" id="form-modalSignup">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-          <form class="form section modal-wrap signup-form">
-            <h1>Signup</h1>
-            <div class="field">
-              <label for="email-signup" class="lable is-large">email:</label>
-              <div class="control">
-                <input
-                  class="input is rounded is-large"
-                  type="text"
-                  placeholder="email@netscape.com"
-                  id="email-signup"
-                />
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="password-signup" class="lable is-large"
-                >Password:</label
-              >
-              <div class="control">
-                <input
-                  class="input is rounded is-large"
-                  type="password"
-                  placeholder="Enter your Password"
-                  id="password-signup"
-                />
-              </div>
-            </div>
-
-            <div class="control">
-              <button class="button is-primary" action="##" id="submit">
-                Sign Up
-              </button>
-              <!--created a new id changed id back lol-->
-            </div>
-          </form>
-          <button
-            class="modal-close is large is warning"
-            aria-label="close"
-          ></button>
+      <div class="field">
+        <label for='password-signup'class="lable is-large">Password:</label>
+        <div class="control">
+          <input class="input is rounded is-large" type="password" placeholder="Enter your Password" id="password-signup">
         </div>
       </div>
 

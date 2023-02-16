@@ -1,75 +1,27 @@
 {{!-- THIS NEEDS TO BE CHANGED! matt webb feb 8 2023 --}}
 
 {{!-- lOGIN --}}
-<style>
-      body,
-      html {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-      }
-  
-      h1 {
-        font-size: 1.75rem;
-        font-weight: bold;
-        color: white;
-      }
-     
-      body {
-        background: linear-gradient(-45deg, #9d847c, #514147, #c4d1d6, #141817);
-        background-size: 400% 400%;
-        animation: gradient 10s ease infinite;
-      }
-      label {
-        color: white;
-      }
+<div class="modalLogin" id="form-modalLogin">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <form class="form section modal-wrap login-form">
+      <h2>Login</h2>
+      <div class="field">
+        <label for='email-login'class="lable is-large">email:</label>
+        <div class="control">
+          <input class="input is rounded is-large" type="text" placeholder="email@netscape.com" id="email-login">
+        </div>
+      </div>
       
-  
-      @keyframes gradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-    </style>
-    <div class="card">
-      <div class="modalLogin" id="form-modalLogin">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-          <form class="form section modal-wrap login-form">
-            <h1>Login</h1>
-            <div class="field">
-              <label for='email-login'class="lable is-large">email:</label>
-              <div class="control">
-                <input class="input is rounded is-large" type="text" placeholder="email@netscape.com" id="email-login">
-              </div>
-            </div>
-            
-            <div class="field">
-              <label for="password-login" class="lable is-large">Password:</label>
-              <div class="control">
-                <input class="input is rounded is-large" type="password" placeholder="Enter your Password" id="password-login">
-              </div>
-            </div>
-      
-            <div class="control">
-              <button class="button is-primary" action="" id="submit">Login</button> <!--created a new id-->
-            </div>
-      
-          </form>
-          <button class="modal-close is-large is-warning" aria-label="close"></button>
+      <div class="field">
+        <label for="password-login" class="lable is-large">Password:</label>
+        <div class="control">
+          <input class="input is rounded is-large" type="password" placeholder="Enter your Password" id="password-login">
         </div>
       </div>
 
       <div class="control">
-        <button class="button is-primary" action="" type="submit" id="submit-login">Login In</button> <!--created a new id-->
+        <button class="button is-primary" type='submit'id="submit-login">Login In</button> <!--created a new id-->
       </div>
 
     </form>
