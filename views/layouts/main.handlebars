@@ -9,28 +9,57 @@
   <title>Workout-inator 3 Billion</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
 </head>
 
 <body>
   <div>
-    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a href='/'class="navbar-item"> Home </a>
+          {{#if logged_in}}
+          <a href='/survey'class="navbar-item"> Macros Calculator </a>
+          <button class="navbar-item" id="logout">logout</button>
+          {{else}}
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a href='/login'class="button is-primary">
+                <strong>Login</strong>
+              </a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <main >
       <!-- Render the sub layout -->
       {{{ body }}}
 
-      {{login}} <!--we need to test/cleanup the code-->
-      {{signup}}
     </main>
     <footer>
       
     </footer>
   </div>
 
+  <script src="/js/login.js"></script>
+  <script src="/js/signup.js"></script>
+
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   <script src="/js/profile.js"></script>
   {{/if}}
+
+  <script src="./assets/JS/modal.js"></script>
 </body>
 
 </html>

@@ -17,34 +17,44 @@ Workout.init(
         },
         muscle_group_focus: {
             type: DataTypes.STRING,
+            allowNull: false,
         },
-        exercise_1: {
+        exercise: {
             type: DataTypes.STRING,
+            allowNull: false,
         },
-        exercise_2: {
-            type: DataTypes.STRING,
-        },
-        exercise_3: {
-            type: DataTypes.STRING,
-        },
-        exercise_4: {
-            type: DataTypes.STRING,
-        },
-        exercise_5: {
+        filename: {
             type: DataTypes.STRING,
         },
         description: {
             type: DataTypes.TEXT,
             allowNull: true
+        },
+        gallery_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'gallery',
+              key: 'id',
+            }
         }
     },
     {
+        hooks: {
+          beforeCreate: async (newUserData) => {
+            newUserData.password = await bcrypt.hash(newUserData.password, 10);
+            return newUserData;
+          },
+          beforeUpdate: async (updatedUserData) => {
+            updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+            return updatedUserData;
+          },
+        },
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'workout',
-    }
-)
+        modelName: 'user',
+      }
+    );
 
 module.exports = Workout

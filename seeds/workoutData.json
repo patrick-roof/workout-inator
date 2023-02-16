@@ -1,32 +1,122 @@
 [
     {
         "title": "Push",
+        "gallery_id": 1,
         "muscle_group_focus": "Triceps, Shoulders and Chest",
-        "exercise_1": "Tricep Extension",
-        "exercise_2": "Shoulder Press",
-        "exercise_3": "Lateral Raises",
-        "exercise_4": "Flat Bench Press",
-        "exercise_5": "Incline Bench Press",
-        "description": "The fitness gram pacer test is a multi-arobic stage test that"
+        "exercise": "Tricep Extension",
+        "filename": "01-Triceps_Extension.jpg",
+        "description": "Triceps workout stuff"
+    },
+    {
+        "title": "Push",
+        "gallery_id": 1,
+        "muscle_group_focus": "Triceps, Shoulders and Chest",
+        "exercise": "Shoulder Press",
+        "filename": "02-<<<add file name>>>.jpg",
+        "description": "Sholder Press stuff"
+    },
+    {
+        "title": "Push",
+        "gallery_id": 1,
+        "muscle_group_focus": "Triceps, Shoulders and Chest",
+        "exercise": "Lateral Raises",
+        "filename": "03-<<<add file name>>>.jpg",
+        "description": "Lateral Raises stuff"
+    },
+    {
+        "title": "Push",
+        "gallery_id": 1,
+        "muscle_group_focus": "Triceps, Shoulders and Chest",
+        "exercise": "Flat Bench Press",
+        "filename": "04-<<<add file name>>>.jpg",
+        "description": "Flat Bench Press"
+    },
+    {
+        "title": "Push",
+        "gallery_id": 1,
+        "muscle_group_focus": "Triceps, Shoulders and Chest",
+        "exercise": "Incline Bench Press",
+        "filename": "05-<<<add file name>>>.jpg",
+        "description": "Incline Bench Press stuff"
     },
     {
         "title": "Pull",
+        "gallery_id": 2,
         "muscle_group_focus": "Biceps, Back, Abs",
-        "exercise_1": "Bicep Curls",
-        "exercise_2": "Chest supported row machine ",
-        "exercise_3": "Lat Pulldown",
-        "exercise_4": "Situps",
-        "exercise_5": "Crunches",
-        "description": "The fitness gram pacer test is a multi-arobic stage test that"
+        "exercise": "Bicep Curls",
+        "filename": "01-<<<add file name>>>.jpg",
+        "description": "🦾Bicep Curls stuff"
+    },
+    {
+        "title": "Pull",
+        "gallery_id": 2,
+        "muscle_group_focus": "Biceps, Back, Abs",
+        "exercise": "Chest supported row machine ",
+        "filename":"02-<<<add file name>>>.jpg",
+        "description": "🦾Chest supported row machine stuff"
+    },
+    {
+        "title": "Pull",
+        "gallery_id": 2,
+        "muscle_group_focus": "Biceps, Back, Abs",
+        "exercise": "Lat Pulldown",
+        "filename":"03-<<<add file name>>>.jpg",
+        "description": "🦾Lat Pulldown stuff"
+    },
+    {
+        "title": "Pull",
+        "gallery_id": 2,
+        "muscle_group_focus": "Biceps, Back, Abs",
+        "exercise": "Situps",
+        "filename":"04-<<<add file name>>>.jpg",
+        "description": "🦾Situps stuff"
+    },
+    {
+        "title": "Pull",
+        "gallery_id": 2,
+        "muscle_group_focus": "Biceps, Back, Abs",
+        "exercise": "Crunches",
+        "filename":"05-<<<add file name>>>.jpg",
+        "description": "🦾Crunches stuff"
     },
     {
         "title": "Legs",
+        "gallery_id": 3,
         "muscle_group_focus": "Quads, Hamstrings, Glutes, Calves",
         "exercise_1": "Leg Extensions",
+        "filename":"01-<<<add file name>>>.jpg",
+        "description": "🦵Leg Extension stuff"
+    },
+    {
+        "title": "Legs",
+        "gallery_id": 3,
+        "muscle_group_focus": "Quads, Hamstrings, Glutes, Calves",
         "exercise_2": "Hamstring Curls",
+        "filename":"02-<<<add file name>>>.jpg",
+        "description": "🦵Hamstring Curls stuff"
+    },
+    {
+        "title": "Legs",
+        "gallery_id": 3,
+        "muscle_group_focus": "Quads, Hamstrings, Glutes, Calves",
         "exercise_3": "Squats",
+        "filename":"03-<<<add file name>>>.jpg",
+        "description": "🦵Squats."
+    },
+    {
+        "title": "Legs",
+        "gallery_id": 3,
+        "muscle_group_focus": "Quads, Hamstrings, Glutes, Calves",
         "exercise_4": "Glute Bridge",
+        "filename":"04-<<<add file name>>>.jpg",
+        "description": "🦵Glute Bridge stuff"
+    },    
+    {
+        "title": "Legs",
+        "gallery_id": 3,
+        "muscle_group_focus": "Quads, Hamstrings, Glutes, Calves",
         "exercise_5": "Calf raises",
-        "description": "The fitness gram pacer test is a multi-arobic stage test that"
+        "filename": "05-<<<add file name>>>.jpg",
+        "description": "🦵Calf raises stuff"
     }
 ]

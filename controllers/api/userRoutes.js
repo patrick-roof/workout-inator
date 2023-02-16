@@ -48,6 +48,21 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.post('/signup', async (req, res) => {
+  //something may need to go here for the signup to work
+  const newUser = await User.create({
+    email: req.body.email,
+    password: req.body.password,
+  });
+  console.log(newUser)
+  req.session.save(() => {
+    req.session.user_id = newUser.id;
+    req.session.logged_in = true;
+    
+    res.json({ user: newUser, message: 'You are now logged in!' });
+  });
+})
+
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
