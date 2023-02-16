@@ -1,3 +1,5 @@
+const login = document.getElementById('login-form')
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
   
@@ -21,7 +23,7 @@ const loginFormHandler = async (event) => {
   
   document
     .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+    .addEventListener('submit-login', loginFormHandler);
   
   
 

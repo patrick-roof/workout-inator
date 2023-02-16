@@ -22,4 +22,4 @@ const signupFormHandler = async (event) => {
     }
   };
 
-signup.addEventListener('submit-signup', signupFormHandler);
+signup.addEventListener('submit', signupFormHandler);
