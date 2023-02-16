@@ -4,8 +4,8 @@
         "gallery_id": 1,
         "muscle_group_focus": "Triceps, Shoulders and Chest",
         "exercise": "Tricep Extension",
-        "filename": "01-<<<add file name>>>.jpg",
-        "description": "Tricep workout stuff"
+        "filename": "01-Triceps_Extension.jpg",
+        "description": "Triceps workout stuff"
     },
     {
         "title": "Push",
@@ -93,7 +93,7 @@
         "muscle_group_focus": "Quads, Hamstrings, Glutes, Calves",
         "exercise_2": "Hamstring Curls",
         "filename":"02-<<<add file name>>>.jpg",
-        "description": "🦵Leg Extension stuff"
+        "description": "🦵Hamstring Curls stuff"
     },
     {
         "title": "Legs",
@@ -101,7 +101,7 @@
         "muscle_group_focus": "Quads, Hamstrings, Glutes, Calves",
         "exercise_3": "Squats",
         "filename":"03-<<<add file name>>>.jpg",
-        "description": "🦵Leg Extension stuff"
+        "description": "🦵Squats."
     },
     {
         "title": "Legs",
@@ -109,7 +109,7 @@
         "muscle_group_focus": "Quads, Hamstrings, Glutes, Calves",
         "exercise_4": "Glute Bridge",
         "filename":"04-<<<add file name>>>.jpg",
-        "description": "🦵Leg Extension stuff"
+        "description": "🦵Glute Bridge stuff"
     },    
     {
         "title": "Legs",
@@ -117,6 +117,6 @@
         "muscle_group_focus": "Quads, Hamstrings, Glutes, Calves",
         "exercise_5": "Calf raises",
         "filename": "05-<<<add file name>>>.jpg",
-        "description": "🦵Leg Extension stuff"
+        "description": "🦵Calf raises stuff"
     }
 ]
