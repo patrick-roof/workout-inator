@@ -10,29 +10,11 @@ router.get('/', async (req, res) => {
 
 router.get('/workoutpage', withAuth, async (req, res) => {
   console.log('/workoutpage');
-  try {
-    const galleryData = await Gallery.FindAll({
-      include: [
-        {
-          model: Workout,
-          attributes: ['title', 'muscle_group_focus'],
-        },
-      ],
-    });
-    console.log(galleryData);
-
-    const galleries = galleryData.map((gallery) =>
-      gallery.get({ plain: true })
-    );
-
     res.render('workoutpage', {
-      galleries,
+
       logged_in: req.session.logged_in,
       logged_in: true,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+    })
 });
 
 // -↓-↓-↓-↓-↓- PROFILE ROUTER -↓-↓-↓-↓-↓- PENDING
