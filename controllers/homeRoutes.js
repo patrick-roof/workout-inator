@@ -1,39 +1,39 @@
 const router = require('express').Router();
-const { Workout, User, Gallery, Survey, } = require('../models')
-const withAuth = require('../utils/auth')
+const { Workout, User, Gallery, Survey } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-
-    res.render('homepage')
-})
+  res.render('homepage');
+});
 
 // -↓-↓-↓-↓-↓- GET all [3] galleries for workoutpage -↓-↓-↓-↓-↓-
 
-router.get('/workoutpage', async (req, res) => {
-  console.log('/workoutpage')
+router.get('/workoutpage', withAuth, async (req, res) => {
+  console.log('/workoutpage');
   try {
     const galleryData = await Gallery.FindAll({
       include: [
         {
           model: Workout,
-          attributes: ['title', 'muscle_group_focus'], 
-        },                                       
-      ],                                        
+          attributes: ['title', 'muscle_group_focus'],
+        },
+      ],
     });
-    console.log(galleryData)
+    console.log(galleryData);
 
     const galleries = galleryData.map((gallery) =>
-    gallery.get({ plain: true }));
+      gallery.get({ plain: true })
+    );
 
     res.render('workoutpage', {
       galleries,
       logged_in: req.session.logged_in,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
 
 // -↓-↓-↓-↓-↓- PROFILE ROUTER -↓-↓-↓-↓-↓- PENDING
 
@@ -50,13 +50,13 @@ router.get('/workoutpage', async (req, res) => {
 //               'lastName',
 //               'goal',
 //               'daily_calories'
-//             ], 
+//             ],
 //           }],
 //       });
 //       console.log(userData)
-  
+
 //       const user = userData.get({ plain: true });
-  
+
 //       res.render('profile', {
 //         ...user,
 //         logged_in: true
@@ -69,12 +69,12 @@ router.get('/workoutpage', async (req, res) => {
 // -↓-↓-↓-↓-↓- LOGIN ROUTER -↓-↓-↓-↓-↓-
 
 router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/workoutpage');
-      return;
-    }
-  
-    res.render('login');
+  if (req.session.logged_in) {
+    res.redirect('/workoutpage');
+    return;
+  }
+
+  res.render('login');
 });
 
 // -↓-↓-↓-↓-↓- SIGNUP ROUTER -↓-↓-↓-↓-↓-
@@ -91,10 +91,10 @@ router.get('/signup', (req, res) => {
 // -↓-↓-↓-↓-↓- SURVEY ROUTER -↓-↓-↓-↓-↓-
 
 router.get('/survey', (req, res) => {
-    res.render('survey')
-})
+  res.render('survey');
+});
 
-module.exports = router
+module.exports = router;
 
 // -↓-↓-↓-↓-↓- GET ONE GALLERY ROUTER -↓-↓-↓-↓-↓-
 
