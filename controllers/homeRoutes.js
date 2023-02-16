@@ -42,8 +42,9 @@ router.get('/workoutpage', async (req, res) => {
     });                                         
 
     res.render('workoutpage', {
-      workouts,
-      logged_in: req.session.logged_in
+      // workouts,
+      logged_in: req.session.logged_in,
+      logged_in: true
     });
   } catch (err) {
     res.status(500).json(err);

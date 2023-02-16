@@ -9,6 +9,10 @@
   <title>Workout-inator 3 Billion</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
 </head>
 
 <body>
@@ -39,11 +43,15 @@
     <main >
       <!-- Render the sub layout -->
       {{{ body }}}
+
     </main>
     <footer>
       
     </footer>
   </div>
+
+  <script src="/js/login.js"></script>
+  <script src="/js/signup.js"></script>
 
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
