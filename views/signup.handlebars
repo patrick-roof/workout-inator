@@ -1,28 +1,15 @@
 {{!--SIGNUP--}}
-<style>
-      body,
-      html {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-      }
-  
-      h1 {
-        font-size: 1.75rem;
-        font-weight: bold;
-        color: white;
-      }
-     
-      body {
-        background: linear-gradient(-45deg, #9d847c, #514147, #c4d1d6, #141817);
-        background-size: 400% 400%;
-        animation: gradient 10s ease infinite;
-      }
-      label {
-        color: white;
-      }
+<div class="" id="">
+  <div class=""></div>
+  <div class="">
+    <form class="form section signup-form" id='signup-form'>
+    <h2>Signup</h2>
+      <div class="field">
+        <label for='email-signup'class="lable is-large">email:</label>
+        <div class="control">
+          <input class="input is rounded is-large" type="text" placeholder="email@netscape.com" id="email-signup">
+        </div>
+      </div>
       
   
       @keyframes gradient {
@@ -82,6 +69,14 @@
           ></button>
         </div>
       </div>
-    </div>
 
-<script src="./js/login.js"></script>
+      <div class="control">
+        <button class="button is-primary" action="" type="submit" id="submit-signup">Sign Up</button> <!--created a new id changed id back lol-->
+      </div>
+
+    </form>
+    {{!-- <button class="modal-close is-large is-warning" aria-label="close"></button> --}}
+  </div>
+</div>
+
+<script src="./js/signup.js"></script>
