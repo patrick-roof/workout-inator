@@ -31,24 +31,24 @@ router.get('/', async (req, res) => {
 
 router.get('/workoutpage', async (req, res) => {
   console.log('/workoutpage')
-  try {
-    const workoutData = await Workout.FindAll({
-      include: [
-        {
-          model: User,
-          attributes: ['firstName', 'lastName'], 
-        },                                       
-      ],                                        
-    });                                         
+  // try {
+  //   const workoutData = await Workout.FindAll({
+  //     include: [
+  //       {
+  //         model: User,
+  //         attributes: ['firstName', 'lastName'], 
+  //       },                                       
+  //     ],                                        
+  //   });                                         
 
     res.render('workoutpage', {
       // workouts,
       logged_in: req.session.logged_in,
       logged_in: true
     });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
 })
 
 router.get('/profile', withAuth, async (req, res) => {
