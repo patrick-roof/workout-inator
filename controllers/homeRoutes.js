@@ -1,82 +1,65 @@
 const router = require('express').Router();
-const { Workout, User } = require('../models')
-const withAuth = require('../utils/auth')
+const { Workout, User, Gallery, Survey } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-  //added login requirements to the homepage.
-  //the workouts will be locked from view until logged in.
-  //TEST//
-  //un-comment lines 10-28 to test
-  // try {
-  //   const workoutData = await Workout.FindAll({
-  //     include: [
-  //       {
-  //         model: User,
-  //         attributes: ['firstName', 'lastName'], // will this be okay? or; 
-  //       },                                       // do we want to update the attribute to;
-  //     ],                                         // 'name' or;
-  //   });                                          // leave it as 'firstName' and 'lastName'?
-
-  //   const workouts = workoutData.map((workout) => workout.get({ plain: true }));
-
-  //   res.render('homepage', {
-  //     workouts,
-  //     logged_in: req.session.logged_in
-  //   });
-  // } catch (err) {
-  //   res.status(500).json(err);
-  // }
-    res.render('homepage')
-})
-
-router.get('/workoutpage', async (req, res) => {
-  console.log('/workoutpage')
-  try {
-    const workoutData = await Workout.FindAll({
-      include: [
-        {
-          model: User,
-          attributes: ['firstName', 'lastName'], 
-        },                                       
-      ],                                        
-    });                                         
-
-    res.render('workoutpage', {
-      // workouts,
-      logged_in: req.session.logged_in,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
-
-router.get('/profile', withAuth, async (req, res) => {
-    try {
-      // Find the logged in user based on the session ID
-      const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
-      });
-  
-      const user = userData.get({ plain: true });
-  
-      res.render('profile', {
-        ...user,
-        logged_in: true
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
-  
-router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-      res.redirect('/workoutpage');
-      return;
-    }
-  
-    res.render('login');
+  res.render('homepage');
 });
+
+// -↓-↓-↓-↓-↓- GET all [3] galleries for workoutpage -↓-↓-↓-↓-↓-
+
+router.get('/workoutpage', withAuth, async (req, res) => {
+  console.log('/workoutpage');
+    res.render('workoutpage', {
+
+      logged_in: req.session.logged_in,
+      logged_in: true,
+    })
+});
+
+// -↓-↓-↓-↓-↓- PROFILE ROUTER -↓-↓-↓-↓-↓- PENDING
+
+// router.get('/profile', withAuth, async (req, res) => {
+//     try {
+//       // Find the logged in user based on the session ID
+//       const userData = await User.findByPk(req.session.user_id, {
+//         attributes: { exclude: ['password'] },
+//         include: [
+//           {
+//             model: User,
+//             attributes: [
+//               'firstName',
+//               'lastName',
+//               'goal',
+//               'daily_calories'
+//             ],
+//           }],
+//       });
+//       console.log(userData)
+
+//       const user = userData.get({ plain: true });
+
+//       res.render('profile', {
+//         ...user,
+//         logged_in: true
+//       });
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
+
+// -↓-↓-↓-↓-↓- LOGIN ROUTER -↓-↓-↓-↓-↓-
+
+router.get('/login', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/workoutpage');
+    return;
+  }
+
+  res.render('login');
+});
+
+// -↓-↓-↓-↓-↓- SIGNUP ROUTER -↓-↓-↓-↓-↓-
 
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
@@ -87,8 +70,50 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
-router.get('/survey', (req, res) => {
-    res.render('survey')
-})
+// -↓-↓-↓-↓-↓- SURVEY ROUTER -↓-↓-↓-↓-↓-
 
-module.exports = router
+router.get('/survey', (req, res) => {
+  res.render('survey');
+});
+
+module.exports = router;
+
+// -↓-↓-↓-↓-↓- GET ONE GALLERY ROUTER -↓-↓-↓-↓-↓-
+
+// router.get('/gallery/:id', withAuth, async (req, res) => {
+//   try {
+//     const galleryData = await Gallery.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: Workout,
+//           attributes: ['title', 'muscle_group_focus'],
+//         },
+//       ],
+//     });
+
+//     const gallery = galleryData.get({ plain: true });
+//     res.render('gallery', {
+//       logged_in: req.session.logged_in,
+//     });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
+
+// -↓-↓-↓-↓-↓- GET ONE WORKOUT ROUTER -↓-↓-↓-↓-↓-
+
+// router.get('/workout/:id', withAuth, async (req, res) => {
+//   console.log('/workout/:id')
+//     try {
+//         const workoutData = await Workout.findByPk(req.params.id);
+//         const workout = workoutData.get({ plain: true });
+
+//         res.render('workout', {
+//             logged_in: req.session.logged_in
+//         });
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err);
+//     }
+// });
