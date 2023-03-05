@@ -14,4 +14,5 @@ We hope you find this application useful! Happy training :)
 ## Link
 https://workout-inator.herokuapp.com/
 
-## Photo
+![image](https://user-images.githubusercontent.com/115768554/222988712-48cc449c-7689-4211-abca-052127daeda3.png)
+
