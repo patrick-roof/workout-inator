@@ -12,6 +12,6 @@ Once a user is done they can safely logout, if not their session will automatica
 We hope you find this application useful! Happy training :)
 
 ## Link
-
+https://workout-inator.herokuapp.com/
 
 ## Photo
